@@ -1,0 +1,29 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexCenterClumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex($flow, $align, $justify) {
+  display: flex;
+  flex-flow: $flow;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin breakpoint($point) {
+  @if ($point == tablet) {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if ($point == desktop) {
+    @media screen and (min-width: 1111px) {
+      @content;
+    }
+  }
+}

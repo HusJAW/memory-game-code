@@ -1,0 +1,96 @@
+@use "../helper/_mixins" as *;
+@use "../base/_variables" as *;
+@use "../base/_typography" as *;
+
+.game-over-modul {
+  // font-family: "Press Start 2P", cursive;
+  height: 100vh;
+  width: 100vw;
+  background: hsla(0, 0, 0, 50%);
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .modul-content {
+    color: rgba(110, 54, 8, 0.795);
+    background: wheat;
+
+    width: 32.7rem;
+    border-radius: 1.4rem;
+    @include flexCenterClumn();
+    gap: 1.5rem;
+    padding: 2.4rem;
+    font-weight: bold;
+
+    h2 {
+      font-size: 2.4rem;
+      // font-family: "Press Start 2P", cursive;
+    }
+    p {
+      font-size: 1.4rem;
+      line-height: 2rem;
+      &:nth-child(2) {
+        font-family: "Press Start 2P", cursive;
+      }
+    }
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 1.4rem;
+      width: 100%;
+      height: 4.8rem;
+      background: rgb(235, 205, 151);
+      padding: 1rem;
+      text-transform: capitalize;
+      &.winner {
+        background: rgba(110, 54, 8, 0.795);
+        color: rgb(235, 205, 151);
+      }
+      p:nth-of-type(1) {
+        font-size: 1.3rem;
+      }
+      p:nth-of-type(2) {
+        font-size: 2rem;
+      }
+    }
+    .button-container {
+      @include flexCenterClumn();
+      gap: 1rem;
+      padding: 0.5rem 0rem;
+
+      height: 11.2rem;
+      button {
+        border: none;
+        border-radius: 1.4rem;
+        background: var(--grey-blue-300);
+        color: var(--grey-blue-800);
+        background: rgba(110, 54, 8, 0.795);
+        color: rgb(235, 205, 151);
+        height: 6.1rem;
+        width: 27rem;
+        font-size: 1.8rem;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:nth-of-type(1) {
+          background: var(--orange-500);
+          color: var(--white-300);
+        }
+      }
+    }
+    @include breakpoint(tablet) {
+      width: 65.4rem;
+      .button-container {
+        flex-direction: row;
+        gap: 3rem;
+      }
+    }
+  }
+}
+
+.hide {
+  display: none;
+}

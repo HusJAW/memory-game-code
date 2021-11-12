@@ -1,0 +1,116 @@
+@use "../helper/_mixins" as *;
+@use "../base/_variables" as *;
+
+.information-nav {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  display: grid;
+  place-items: center;
+}
+
+.info-container-single-player {
+  width: 32.7rem;
+  display: flex;
+  justify-content: space-between;
+  div {
+    width: 15.1rem;
+    height: 7rem;
+    background: var(--grey-blue-300);
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    border-radius: 1.4rem;
+    & p:nth-of-type(1) {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--grey-blue-600);
+    }
+    & p:nth-of-type(2) {
+      font-weight: bold;
+      font-size: 2.4rem;
+      color: var(--grey-blue-800);
+    }
+  }
+  @include breakpoint(tablet) {
+    width: 54rem;
+    div {
+      display: flex;
+      justify-content: space-between;
+      width: 25.5rem;
+      height: 7.2rem;
+      padding: 0 2.4rem;
+      & p:nth-of-type(1) {
+        font-size: 1.8rem;
+      }
+      & p:nth-of-type(2) {
+        font-size: 3.2rem;
+      }
+    }
+  }
+}
+
+.info-container-multiplayer {
+  display: flex;
+  gap: clamp(2.4rem, 3.3286rem + -2.4762vw, 1.1rem);
+  // width: clamp(32.7rem, -34.793rem + 101.3146vw, 111.1rem);
+  // height: clamp(7.8rem, 5.969rem + 4.8826vw, 13rem);
+
+  .custom-button {
+    display: grid;
+    place-items: center;
+    width: clamp(6.4rem, 2.8789rem + 9.3897vw, 16.4rem);
+    height: clamp(7rem, 6.6479rem + 0.939vw, 8rem);
+    background: var(--grey-blue-300);
+    border-radius: 1.4rem;
+    position: relative;
+
+    &.inactive {
+      opacity: 0.16;
+    }
+
+    & div:nth-of-type(1) {
+      height: 0;
+      width: 0;
+      position: absolute;
+      bottom: clamp(7rem, 6.6479rem + 0.939vw, 8rem);
+      border-right: clamp(1.6rem, 0.4791rem + 2.9891vw, 3rem) solid transparent;
+      border-left: clamp(1.6rem, 0.4791rem + 2.9891vw, 3rem) solid transparent;
+      border-bottom: clamp(1.6rem, 0.4791rem + 2.9891vw, 3rem) solid
+        var(--orange-500);
+      display: none;
+    }
+
+    & div:nth-of-type(2) {
+      font-weight: bold;
+      @include flexCenterClumn();
+      @include breakpoint(tablet) {
+        gap: 1rem;
+      }
+      @include breakpoint(desktop) {
+        flex-direction: row;
+        gap: 5rem;
+      }
+
+      & p:nth-of-type(1) {
+        font-size: 1.5rem;
+        color: var(--grey-blue-600);
+      }
+      & p:nth-of-type(2) {
+        font-size: 2.4rem;
+        color: var(--grey-blue-900);
+      }
+    }
+  }
+
+  .custom-button-container {
+    input {
+      display: none;
+      &:checked ~ div {
+        background: var(--orange-500);
+        div:nth-of-type(1) {
+          display: block;
+        }
+      }
+    }
+  }
+}

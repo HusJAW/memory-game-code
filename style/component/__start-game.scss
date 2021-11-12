@@ -1,0 +1,96 @@
+@use "../helper/_mixins" as *;
+@use "../base/_variables" as *;
+
+section.start-game {
+  display: grid;
+  place-items: center;
+  row-gap: 4.5rem;
+  padding: 9.5rem 0rem;
+  .logo {
+    svg {
+      fill: var(--white-200);
+    }
+  }
+}
+
+.game-selectors-container {
+  background: var(--white-200);
+  border-radius: 1.4rem;
+  padding: 2.4rem;
+  display: grid;
+  grid-template-columns: 27.9rem;
+  row-gap: 2.8rem;
+
+  .setting-container {
+    display: flex;
+    @include flexCenterClumn();
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    h2 {
+      color: var(--grey-blue-500);
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .selector-option-container {
+      height: 4.8rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 1.1rem;
+      div {
+        flex-grow: 1;
+        border: none;
+        font-weight: bold;
+        font-size: 1.6rem;
+        // padding: 1.5rem 0;
+        border-radius: 2.5rem;
+        color: var(--white-200);
+        cursor: pointer;
+        overflow: hidden;
+        min-width: 6.2rem;
+
+        input {
+          display: none;
+        }
+        label {
+          width: 100%;
+          height: 100%;
+          display: grid;
+          place-items: center;
+          background: var(--grey-blue-300);
+          cursor: pointer;
+          &:hover {
+            background: var(--grey-blue-600);
+          }
+        }
+        input:checked ~ label {
+          background: var(--grey-blue-900);
+        }
+      }
+    }
+  }
+
+  @include breakpoint(tablet) {
+    padding: 5.6rem;
+    grid-template-columns: 54.2rem;
+    row-gap: 3.8rem;
+    .setting-container {
+      gap: 2.2rem;
+      h2 {
+        font-size: 2rem;
+      }
+      .selector-option-container {
+        height: 5.2rem;
+        div {
+          font-size: 2.6rem;
+          min-width: 11.9rem;
+        }
+      }
+    }
+  }
+}
+
+section.start-game.hide {
+  display: none;
+}

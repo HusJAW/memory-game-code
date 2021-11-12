@@ -1,0 +1,81 @@
+@use "../helper/_mixins" as *;
+@use "../base/_variables" as *;
+
+.game-grid {
+  margin-top: 7.5rem;
+  display: grid;
+  place-items: center;
+  div {
+    div {
+      cursor: pointer;
+    }
+  }
+}
+
+.four-by-four-container {
+  height: 32.7rem;
+  width: 32.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  @include breakpoint(tablet) {
+    height: 53.2rem;
+    width: 53.2rem;
+  }
+}
+
+.four-by-four-button {
+  display: grid;
+  place-items: center;
+  height: 7.253rem;
+  width: 7.253rem;
+  border-radius: 50%;
+  background-color: var(--grey-blue-900);
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--white-200);
+  @include breakpoint(tablet) {
+    height: 11.8rem;
+    width: 11.8rem;
+    font-size: 5.6rem;
+  }
+}
+
+.six-by-six-container {
+  height: 32.688rem;
+  width: 32.688rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  @include breakpoint(tablet) {
+    height: 57.2rem;
+    width: 57.2rem;
+  }
+}
+
+.six-by-six-button {
+  display: grid;
+  place-items: center;
+  height: 4.688rem;
+  width: 4.688rem;
+  border-radius: 50%;
+  background-color: var(--grey-blue-900);
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--white-200);
+  @include breakpoint(tablet) {
+    height: 8.2rem;
+    width: 8.2rem;
+    font-size: 4.4rem;
+  }
+}
+
+.active {
+  background: var(--grey-blue-300);
+}
+
+.matches {
+  background: var(--orange-500);
+}

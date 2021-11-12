@@ -1,0 +1,19 @@
+//----------BASE----------
+@use "base/_page-reset";
+@use "base/_typography";
+@use "base/_variables";
+@use "base/_global";
+
+//----------COMPONENTS----------]
+@use "component/_start-game";
+@use "component/_buttons";
+@use "component/_game-nav";
+@use "component/_game-grid";
+@use "component/_information-nav";
+@use "component/_result-modal";
+
+//----------HELPER----------
+@use "helper/_helperClasses";
+@use "helper/_mixins";
+
+//----------PAGES----------

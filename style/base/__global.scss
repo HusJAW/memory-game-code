@@ -1,0 +1,30 @@
+@use "../helper/_mixins" as *;
+@use "./_variables" as *;
+@use "./_typography" as *;
+
+body {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  background: var(--grey-blue-900);
+  min-width: 37.5rem;
+  display: grid;
+  grid-template-columns: minmax(2.4rem, 1fr) minmax(32.7rem, 111.1rem) minmax(
+      2.4rem,
+      1fr
+    );
+  @include breakpoint(tablet) {
+    grid-template-columns: minmax(5.7rem, 1fr) minmax(32.7rem, 111.1rem) minmax(
+        5.7rem,
+        1fr
+      );
+  }
+
+  // grid-template-rows: repeat(auto-fill, 1fr);
+}
+body.light {
+  background: var(--white-300);
+}
+main {
+  margin: 0 auto;
+  max-width: 144rem;
+  grid-column: 2/3;
+}

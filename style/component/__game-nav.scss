@@ -1,0 +1,107 @@
+@use "../helper/_mixins" as *;
+@use "../base/_variables" as *;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.4rem 0;
+  width: 32.7rem;
+  position: relative;
+  .logo {
+    display: grid;
+    align-items: center;
+    svg {
+      fill: var(--grey-blue-900);
+    }
+  }
+  button {
+    border-radius: 2.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .menu {
+    background: var(--orange-500);
+    color: var(--white-200);
+    height: 4rem;
+    width: 7.8rem;
+    font-size: 1.6rem;
+  }
+
+  nav {
+    position: absolute;
+    top: 16.3rem;
+    left: 0;
+    @include flexCenterClumn();
+    gap: 1.6rem;
+    width: 32.7rem;
+    padding: 2.4rem;
+    border-radius: 1.4rem;
+    z-index: 2;
+    background: var(--white-200);
+    button {
+      background: var(--grey-blue-300);
+      color: var(--grey-blue-800);
+      height: 4.8rem;
+      width: 27.9rem;
+      font-size: 1.8rem;
+
+      &:nth-of-type(1) {
+        background: var(--orange-500);
+        color: var(--white-300);
+      }
+    }
+  }
+
+  .overlay {
+    background: var(--grey-blue-800);
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    // right: 0%;
+    width: 100vw;
+    height: 100vh;
+    // padding: 10px;
+    z-index: 1;
+  }
+}
+
+nav.hide {
+  display: none;
+}
+.overlay.hide {
+  display: none;
+}
+
+header {
+  @include breakpoint(tablet) {
+    width: clamp(68.9rem, 20.6714rem + 62.7976vw, 111.1rem);
+    .menu {
+      display: none;
+    }
+
+    nav {
+      position: static;
+      flex-direction: row;
+      justify-content: space-between;
+      background: transparent;
+      padding: 0;
+      top: unset;
+      left: unset;
+      width: 29.2rem;
+      button {
+        height: auto;
+        width: auto;
+        padding: 1.8rem;
+        flex-grow: 1;
+        border-radius: 3rem;
+
+        &:nth-of-type(3) {
+          display: none;
+        }
+      }
+    }
+  }
+}

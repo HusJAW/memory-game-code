@@ -1,0 +1,26 @@
+@use "../helper/_mixins" as *;
+@use "../base/_variables" as *;
+
+.start-game-button {
+  flex-grow: 1;
+  border: none;
+  font-weight: bold;
+  font-size: 1.8rem;
+  // padding: 1.75rem 0;
+
+  // border-radius: 2.5rem;
+  border-radius: 2.3rem;
+  color: var(--white-200);
+  background: var(--orange-500);
+  cursor: pointer;
+  height: 4.8rem;
+  width: 27.9rem;
+
+  @include breakpoint(tablet) {
+    font-size: 3.2rem;
+    // padding: 3.45rem 0;
+    border-radius: 3.2rem;
+    height: 7rem;
+    width: 54.1rem;
+  }
+}
